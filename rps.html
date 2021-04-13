@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+<h1>Rock paper scissors</h1>
+<button onclick="buttonPressed(0)">Rock</button>
+<button onclick="buttonPressed(1)">Paper</button>
+<button onclick="buttonPressed(2)">Scissors</button>
+<p id="message">
+
+</p>
+<h2 id="score">Computer : 0 - User : 0</h2>
+
+
+
+<script type="text/javascript">
+	var computerScore =0;
+	var userScore = 0;
+
+
+	function buttonPressed(num){
+		var computerSelection = Math.floor(Math.random()*3);
+		var message = "";
+		
+	if (num == 0){
+		if (computerSelection == 0){
+			message = "Computer select rock. Its a draw"
+		}
+		else if (computerSelection == 1){
+			message = "Computer select paper. You lose"
+			computerScore++;
+		}
+		else {
+			message = "Computer select scissors. You win"
+			userScore
+		}
+	}
+	else if (num ==1) {
+
+		if (computerSelection == 0){
+			message = "Computer select rock, You win";
+			userScore++;
+		}
+		else if (computerSelection == 1){
+			message = "Computer select paper. Its a draw"
+			
+	    }
+	    else {
+	    	message = "Computer select scissors, You lose";
+	    	computerScore++;
+	    }
+	}
+	else {
+		if (computerSelection == 0){
+			message = "Computer select rock, You lose"
+			computerScore++;
+		}
+		else if  (computerSelection == 1){
+			message = "Computer select paper, You win"
+			userScore++;
+		}
+		else {
+		message = "Computer select scissors, Its a draw"
+		}
+
+	}	
+
+
+
+	    document.getElementById("message").innerHTML = message;
+	    document.getElementById("score").innerHTML = "Computer : "+ computerScore+" - User : "+userScore
+	}
+	
+
+</script>
+
+
+
+</body>
